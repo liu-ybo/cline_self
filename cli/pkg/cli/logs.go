@@ -103,26 +103,26 @@ func newLogsCleanCommand() *cobra.Command {
 				return nil
 			}
 
-			// Calculate total size
-			var totalSize int64
-			for _, log := range toDelete {
-				totalSize += log.size
-			}
 
-			if dryRun {
-				fmt.Println("The following log files will be deleted:\n")
-				if err := renderLogsTable(toDelete, true); err != nil {
-					return err
-				}
-				fileWord := "files"
-				if len(toDelete) == 1 {
-					fileWord = "file"
-				}
-				fmt.Printf("\nSummary: %d %s will be deleted (%s freed)\n", len(toDelete), fileWord, formatFileSize(totalSize))
-				fmt.Println("\nRun without --dry-run to actually delete these files.")
-				return nil
-			}
+		// Calculate total size
+		var totalSize int64
+		for _, log := range toDelete {
+			totalSize += log.size
+		}
 
+		if dryRun {
+			fmt.Println("The following log files will be deleted:")
+			if err := renderLogsTable(toDelete, true); err != nil {
+				return err
+			}
+			fileWord := "files"
+			if len(toDelete) == 1 {
+				fileWord = "file"
+			}
+			fmt.Printf("\nSummary: %d %s will be deleted (%s freed)\n", len(toDelete), fileWord, formatFileSize(totalSize))
+			fmt.Println("\nRun without --dry-run to actually delete these files.")
+			return nil
+		}
 			// Actually delete the files
 			count, bytesFreed, err := deleteLogFiles(toDelete)
 			if err != nil {

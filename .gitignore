@@ -30,6 +30,9 @@ coverage-unit
 
 ## Generated files ##
 src/generated/
+# Exception: Keep Go module files in version control
+!src/generated/grpc-go/go.mod
+!src/generated/grpc-go/go.sum
 src/shared/proto/
 webview-ui/src/services/grpc-client.ts
 

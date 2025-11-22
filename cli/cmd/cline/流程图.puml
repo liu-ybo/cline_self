@@ -1,0 +1,27 @@
+@startuml
+actor Developer
+participant VSCodePlugin as Plugin
+participant AgentCore as Agent
+participant LLM
+participant Tools
+
+Developer -> Plugin: 输入目标（自然语言）
+Plugin -> Agent: createSession(goal)
+Agent -> LLM: 分析目标，生成任务计划
+LLM --> Agent: TaskPlan(steps)
+Agent -> Plugin: 展示任务计划给用户
+Developer -> Plugin: 确认执行 Step 1
+Plugin -> Agent: executeStep(step1)
+Agent -> Tools: 调用工具（如 file.read）
+Tools --> Agent: 执行结果
+Agent -> LLM: 根据结果生成下一步行动/代码修改
+LLM --> Agent: Action(如 file.write, command.run)
+Agent -> Plugin: 展示即将执行的操作
+Developer -> Plugin: 确认执行
+Plugin -> Agent: 执行确认
+Agent -> Tools: 真正执行工具
+Tools --> Agent: 执行结果
+Agent -> Plugin: 更新 Step 状态与日志
+... 重复多步 ...
+Agent -> Plugin: 任务完成总结
+@enduml

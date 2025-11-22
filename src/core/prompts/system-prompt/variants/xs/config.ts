@@ -34,6 +34,8 @@ export const config = createVariant(ModelFamily.XS)
 		SystemPromptSection.SYSTEM_INFO,
 		SystemPromptSection.USER_INSTRUCTIONS,
 	)
+	// Note: XS variant uses custom TOOLS section in template instead of TOOL_USE_SECTION
+	// MCP, TODO, and FEEDBACK are not included in compact XS template
 	.tools(
 		ClineDefaultTool.BASH,
 		ClineDefaultTool.FILE_READ,

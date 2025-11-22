@@ -14,12 +14,19 @@ export const baseTemplate = `{{${SystemPromptSection.AGENT_ROLE}}}
 
 ====
 
+{{${SystemPromptSection.CLI_SUBAGENTS}}}
+
+====
+
 {{${SystemPromptSection.CAPABILITIES}}}
 
 ====
 
 {{${SystemPromptSection.EDITING_FILES}}}
 
+====
+
+{{${SystemPromptSection.MCP}}}
 
 ====
 

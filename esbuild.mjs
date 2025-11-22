@@ -26,6 +26,7 @@ const aliasResolverPlugin = {
 			"@shared": path.resolve(__dirname, "src/shared"),
 			"@utils": path.resolve(__dirname, "src/utils"),
 			"@packages": path.resolve(__dirname, "src/packages"),
+			"@generated": path.resolve(__dirname, "src/generated"),
 		}
 
 		// For each alias entry, create a resolver

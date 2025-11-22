@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.1.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -82,7 +82,7 @@
 				"noStaticOnlyClass": "off"
 			},
 			"security": {
-				"noDangerouslySetInnerHtml": "info"
+				"noDangerouslySetInnerHtml": "off"
 			}
 		}
 	},
@@ -109,6 +109,15 @@
 		"formatter": {
 			"trailingCommas": "none",
 			"expand": "always"
+		}
+	},
+	"css": {
+		"parser": {
+			"cssModules": false,
+			"allowWrongLineComments": true
+		},
+		"linter": {
+			"enabled": false
 		}
 	},
 	"files": {

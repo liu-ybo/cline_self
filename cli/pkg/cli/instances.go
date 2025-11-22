@@ -405,12 +405,12 @@ func newInstanceListCommand() *cobra.Command {
 						rendered = strings.ReplaceAll(rendered, "NOT_SERVING", colorRenderer.Red("NOT_SERVING"))
 						rendered = strings.ReplaceAll(rendered, "UNKNOWN", colorRenderer.Yellow("UNKNOWN"))
 
-						fmt.Print(strings.TrimLeft(rendered, "\n"))
-					}
-					fmt.Println("\n")
-				}
-			}
 
+					fmt.Print(strings.TrimLeft(rendered, "\n"))
+				}
+				fmt.Println()
+			}
+		}
 			return nil
 		},
 	}

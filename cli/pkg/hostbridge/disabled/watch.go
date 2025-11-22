@@ -1,5 +1,9 @@
 package hostbridge
 
+// NOTE: WatchService has been removed from the proto definitions.
+// This file is kept for reference but all code is commented out.
+
+/*
 import (
 	"log"
 
@@ -37,3 +41,4 @@ func (s *WatchService) SubscribeToFile(req *host.SubscribeToFileRequest, stream 
 
 	return nil
 }
+*/

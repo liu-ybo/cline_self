@@ -69,6 +69,10 @@ export const config = createVariant(ModelFamily.GPT_5)
 	.overrideComponent(SystemPromptSection.RULES, {
 		template: GPT_5_TEMPLATE_OVERRIDES.RULES,
 	})
+	// Disable EDITING_FILES section to match template
+	.overrideComponent(SystemPromptSection.EDITING_FILES, {
+		enabled: false,
+	})
 	.build()
 
 // Compile-time validation

@@ -242,7 +242,7 @@ func (c *ClineClients) EnsureInstanceAtAddress(ctx context.Context, address stri
 	return fmt.Errorf("cannot start remote instance at %s", normalized)
 }
 
-func startClineHost(hostPort, corePort int) (*exec.Cmd, error) {
+func startClineHost(hostPort, _ int) (*exec.Cmd, error) {
 	if Config.Verbose {
 		fmt.Printf("Starting cline-host on port %d\n", hostPort)
 	}
